@@ -11,11 +11,8 @@
 #include <zmk/display.h>
 #include <zmk/display/status_screen.h>
 #include <zmk/event_manager.h>
-#include <zmk/events/wpm_state_changed.h>
-#include <zmk/events/keypress_state_changed.h>
 #include <zmk/events/layer_state_changed.h>
 #include <zmk/events/battery_state_changed.h>
-#include <zmk/wpm.h>
 #include <zmk/keymap.h>
 #include <zmk/battery.h>
 
@@ -116,20 +113,10 @@ static void draw_bongo_cat(const struct device *dev, int x, int y) {
     }
 }
 
-static void draw_wpm_info(const struct device *dev, int x, int y) {
-    char wpm_text[16];
-    snprintf(wpm_text, sizeof(wpm_text), "WPM: %d", current_wpm);
-    cfb_draw_text(dev, wpm_text, x, y);
-    
-    // Add state indicator
-    const char* state_text = "";
-    switch (current_bongo_state) {
-        case BONGO_FURIOUS: state_text = "FURIOUS!"; break;
-        case BONGO_PREP: state_text = "Ready..."; break;
-        case BONGO_TAP: state_text = "Tapping"; break;
-        default: state_text = "Idle"; break;
-    }
-    cfb_draw_text(dev, state_text, x, y + 8);
+static void draw_status_text(const struct device *dev, int x, int y) {
+    // Show keyboard status
+    cfb_draw_text(dev, "Sofle", x, y);
+    cfb_draw_text(dev, "Ready", x, y + 8);
 }
 
 static void draw_status_info(const struct device *dev, int x, int y) {
@@ -183,8 +170,8 @@ void zmk_display_status_screen_update_cb(const struct device *dev) {
     // Draw bongo cat (left side)
     draw_bongo_cat(dev, 0, 0);
     
-    // Draw WPM info (right side)
-    draw_wpm_info(dev, 70, 0);
+    // Draw status text (right side)
+    draw_status_text(dev, 70, 0);
     
     // Draw status info (bottom)
     draw_status_info(dev, 0, 24);
@@ -193,25 +180,6 @@ void zmk_display_status_screen_update_cb(const struct device *dev) {
 }
 
 static int custom_status_screen_event_listener(const zmk_event_t *eh) {
-    // Handle WPM changes
-    if (as_zmk_wpm_state_changed(eh)) {
-        current_wpm = zmk_wpm_get_state();
-        enum bongo_state new_state = get_bongo_state(current_wpm);
-        if (new_state != current_bongo_state) {
-            current_bongo_state = new_state;
-            animation_frame = 0;
-            last_frame_time = k_uptime_get();
-        }
-        return ZMK_EV_EVENT_BUBBLE;
-    }
-    
-    // Handle key presses for activity
-    if (as_zmk_keypress_state_changed(eh)) {
-        typing_activity = true;
-        last_activity_time = k_uptime_get();
-        return ZMK_EV_EVENT_BUBBLE;
-    }
-    
     // Handle layer changes
     if (as_zmk_layer_state_changed(eh)) {
         current_layer = zmk_keymap_highest_layer_active();
@@ -239,8 +207,6 @@ static int custom_status_screen_init(const struct device *dev) {
 }
 
 ZMK_LISTENER(custom_status_screen, custom_status_screen_event_listener);
-ZMK_SUBSCRIPTION(custom_status_screen, zmk_wpm_state_changed);
-ZMK_SUBSCRIPTION(custom_status_screen, zmk_keypress_state_changed);
 ZMK_SUBSCRIPTION(custom_status_screen, zmk_layer_state_changed);
 ZMK_SUBSCRIPTION(custom_status_screen, zmk_battery_state_changed);
 
