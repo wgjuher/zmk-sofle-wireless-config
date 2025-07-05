@@ -3,15 +3,10 @@ manifest:
     # This is the ZMK Firmware remote, which contains the main ZMK codebase.
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: dsifry # Keybaord Cat Display
-      url-base: https://github.com/dsifry
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: nice-view-mod # Keybaord Cat Display
-      remote: dsifry
-      revision: main 
   self:
     path: config
