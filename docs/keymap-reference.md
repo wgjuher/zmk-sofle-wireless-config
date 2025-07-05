@@ -148,6 +148,55 @@ The keymap consists of 3 layers:
 
 ---
 
+## Display Features
+
+The Sofle keyboard supports OLED displays with an animated bongo cat that responds to your typing speed! The display shows:
+
+- **Animated Bongo Cat**: ASCII art cat that changes based on your WPM
+  - **Idle** (0 WPM): Calm sitting cat
+  - **Tapping** (10+ WPM): Cat starts moving
+  - **Ready** (30+ WPM): Cat prepares for intense typing
+  - **Furious** (50+ WPM): Cat goes crazy with rapid animation!
+- **WPM Tracking**: Real-time words per minute display
+- **Layer Information**: Current active layer indicator  
+- **Battery Status**: Battery level percentage
+- **Typing State**: Current activity level indicator
+
+### OLED Display Configuration
+
+The bongo cat display is configured in `sofle.conf`:
+
+```
+CONFIG_ZMK_DISPLAY=y
+CONFIG_ZMK_WPM=y
+CONFIG_ZMK_DISPLAY_STATUS_SCREEN_CUSTOM=y
+CONFIG_ZMK_DISPLAY_STATUS_SCREEN_BUILT_IN=n
+```
+
+This enables:
+- OLED display support
+- WPM (Words Per Minute) tracking for the bongo cat animation
+- Custom status screen with bongo cat instead of the built-in display
+
+### Display Layout
+
+The 128x32 OLED displays show:
+```
+┌──────────────────────────────────────┐
+│ /\_/\     WPM: 42                    │
+│( ^.^ )    Tapping                    │
+│ \ ˇ /                                │
+│   !                                  │
+│ L:0  B:85%                           │
+└──────────────────────────────────────┘
+```
+
+**Left Side**: Animated bongo cat (changes based on typing speed)  
+**Right Side**: WPM counter and current state  
+**Bottom**: Layer number and battery percentage
+
+---
+
 ## Bluetooth Pairing
 
 1. **Clear existing pairings**: Hold `RAISE` + `BTCLR`
