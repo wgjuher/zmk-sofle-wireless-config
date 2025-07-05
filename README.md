@@ -1,16 +1,16 @@
-# Sofle ZMK Firmware with Bongo Cat Display
+# Sofle ZMK Firmware
 
-This repository contains a complete ZMK firmware setup for the Sofle split keyboard with Nice!Nano controllers, featuring an animated bongo cat display that responds to your typing speed!
+This repository contains a complete ZMK firmware setup for the Sofle split keyboard with Nice!Nano controllers, featuring a stable and reliable configuration with OLED displays.
 
-## 🐱 Features
+## ⌨️ Features
 
-- **Animated Bongo Cat Display**: ASCII art cat that changes based on your WPM
-- **Real-time WPM Tracking**: Live words-per-minute display
+- **OLED Status Displays**: Working OLED displays showing layer, battery, and connection status
 - **3-Layer Keymap**: QWERTY base, symbols/functions, and navigation/system layers
 - **RGB Underglow**: 35 WS2812 LEDs with customizable effects
 - **Rotary Encoder Support**: Volume and page navigation
 - **Bluetooth LE**: Connect up to 5 devices
 - **Battery Monitoring**: Real-time battery level display
+- **Stable Configuration**: Tested and verified to build successfully
 
 ## 🚀 Quick Start
 
@@ -27,7 +27,6 @@ This repository contains a complete ZMK firmware setup for the Sofle split keybo
 │   ├── sofle.keymap          # Main keymap configuration
 │   ├── sofle.conf            # Hardware configuration
 │   ├── west.yml              # ZMK dependencies
-│   ├── custom_status_screen.c # Bongo cat display implementation
 │   └── CMakeLists.txt        # Build configuration
 ├── docs/
 │   └── keymap-reference.md   # Complete keymap documentation
@@ -35,30 +34,10 @@ This repository contains a complete ZMK firmware setup for the Sofle split keybo
 └── README.md               # This file
 ```
 
-## 🎮 Bongo Cat Animation States
-
-The bongo cat responds to your typing speed:
-
-- **😴 Idle (0 WPM)**: Calm sitting cat
-- **🐾 Tapping (10+ WPM)**: Cat starts moving
-- **⚡ Ready (30+ WPM)**: Cat prepares for intense typing  
-- **🔥 Furious (50+ WPM)**: Cat goes crazy with rapid animation!
-
 ## 🔧 Customization
 
 ### Changing the Keymap
 Edit `config/sofle.keymap` to modify key assignments. See [keymap-reference.md](docs/keymap-reference.md) for detailed layer documentation.
-
-### Adjusting Display Settings
-Modify the WPM thresholds and animation timing in `config/custom_status_screen.c`:
-
-```c
-// WPM thresholds
-#define IDLE_WPM_THRESHOLD 0
-#define TAP_WPM_THRESHOLD 10
-#define PREP_WPM_THRESHOLD 30
-#define FURIOUS_WPM_THRESHOLD 50
-```
 
 ### RGB Underglow
 Enable additional RGB effects by adding to `config/sofle.conf`:
@@ -68,6 +47,13 @@ CONFIG_ZMK_RGB_UNDERGLOW_SAT_STEP=10
 CONFIG_ZMK_RGB_UNDERGLOW_BRT_STEP=10
 CONFIG_ZMK_RGB_UNDERGLOW_EFF_START=0
 ```
+
+### Display Customization
+The OLED displays show standard ZMK status information including:
+- Current layer indicator
+- Battery percentage
+- Connection status
+- Caps lock and other modifier states
 
 ## 🔋 Power Management
 
@@ -99,22 +85,26 @@ To build firmware locally:
 **Display not working?**
 - Ensure OLED displays are properly connected to I2C pins
 - Check that `CONFIG_ZMK_DISPLAY=y` is set in sofle.conf
+- Verify display cables are secure and not damaged
 
-**Bongo cat not animating?**
-- Verify WPM tracking is enabled: `CONFIG_ZMK_WPM=y`
-- Check that custom status screen is enabled: `CONFIG_ZMK_DISPLAY_STATUS_SCREEN_CUSTOM=y`
+**RGB underglow not working?**
+- Check that `CONFIG_ZMK_RGB_UNDERGLOW=y` is enabled in sofle.conf
+- Ensure RGB LED strips are properly connected
+- Try toggling with `RAISE + RGBTOG`
 
 **Bluetooth issues?**
 - Clear pairings with `RAISE + BTCLR`
 - Try different BT profiles: `RAISE + BT1-BT5`
+- Power cycle both keyboard halves
+- Reset keyboard with settings reset firmware
 
 ## 🤝 Contributing
 
 Feel free to submit issues and pull requests! Areas for improvement:
-- Additional bongo cat animation frames
-- More display widgets (weather, time, etc.)
-- Custom RGB patterns
-- Additional keymap layouts
+- Custom display widgets
+- Additional RGB patterns and effects
+- Alternative keymap layouts
+- Battery optimization features
 
 ## 📄 License
 
@@ -125,8 +115,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [ZMK Firmware](https://zmk.dev/) team for the excellent keyboard firmware
 - [Sofle Keyboard](https://github.com/josefadamcik/SofleKeyboard) by Josef Adamčík
 - Original keymap inspiration from [klee813's config](https://github.com/klee813/zmk-config-sofle)
-- Bongo cat meme for providing endless entertainment while coding
 
 ---
 
-**Happy typing with your new animated friend! 🐱⌨️**
+**Happy typing with your reliable split keyboard! ⌨️**
