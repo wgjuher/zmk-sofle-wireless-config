@@ -1,0 +1,34 @@
+# Build artifacts
+*.uf2
+build/
+*.hex
+*.bin
+
+# ZMK build directories
+modules/
+tools/
+zephyr/
+bootloader/
+zmk/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Logs
+*.log
+
+# Obsidian files
+.obsidian/
+**/.obsidian/
+
+# Personal customizations (uncomment if you want to keep local changes private)
+# config/personal/
