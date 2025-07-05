@@ -1,17 +1,11 @@
-# Sofle ZMK Firmware with Simple Bongo Cat
+# Sofle ZMK Firmware
 
-This repository contains a complete ZMK firmware setup for the Sofle split keyboard with Nice!Nano controllers, featuring a simple animated bongo cat that changes based on your typing speed!
+This repository contains a complete ZMK firmware setup for the Sofle split keyboard with Nice!Nano controllers, featuring a stable and reliable configuration with OLED displays.
 
-## 🐱 Features
+## ⌨️ Features
 
-- **Animated Bongo Cat Display**: ASCII cat that cycles through different expressions every 3 seconds
-  - 😴 Calm: `(o.o)` - Peaceful and relaxed
-  - 😊 Happy: `(^.^)` - Content and cheerful
-  - 😉 Winking: `(-.o)` - Playful and mischievous
-  - 🤩 Alert: `(@.@)` - Focused and attentive
-  - 😴 Sleepy: `(>.<)` - Tired but cute
-  - ✨ Sparkly: `(*.*)` - Excited and energetic
-- **Reliable Timer-Based Animation**: No complex dependencies, just works!
+- **OLED Status Displays**: Working OLED displays showing layer, battery, and connection status
+- **Stable Configuration**: Tested and verified to build successfully
 - **3-Layer Keymap**: QWERTY base, symbols/functions, and navigation/system layers
 - **RGB Underglow**: 35 WS2812 LEDs with customizable effects
 - **Rotary Encoder Support**: Volume and page navigation
