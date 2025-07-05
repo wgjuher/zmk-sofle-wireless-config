@@ -96,7 +96,7 @@ The keymap consists of 3 layers:
 
 ```
 ┌─────┬─────┬─────┬─────┬─────┬─────┐                    ┌─────┬─────┬─────┬─────┬─────┬─────┐
-│BTCLR│ BT1 │ BT2 │ BT3 │ BT4 │ BT5 │                    │     │     │     │     │     │     │
+│BTCLR│ BT1 │ BT2 │ BT3 │ BT4 │ BT5 │                    │RGBTOG│RGB+ │RGB- │     │     │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
 │     │ INS │PSCR │MENU │     │     │                    │PGUP │     │  ↑  │     │  0  │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
@@ -112,9 +112,13 @@ The keymap consists of 3 layers:
 ```
 
 ### Key Functions
-- **Bluetooth Controls** (Top Row):
+- **Bluetooth Controls** (Top Row Left):
   - `BTCLR`: Clear all Bluetooth pairings
   - `BT1-BT5`: Switch to Bluetooth device 1-5
+- **RGB Underglow Controls** (Top Row Right):
+  - `RGBTOG`: Toggle RGB underglow on/off
+  - `RGB+`: Increase brightness
+  - `RGB-`: Decrease brightness
 - **System Functions**:
   - `INS`: Insert key
   - `PSCR`: Print Screen
@@ -161,11 +165,23 @@ The keymap consists of 3 layers:
 
 ## RGB Underglow
 
-RGB underglow is enabled by default. Controls for RGB can be added to the raise layer if needed:
-- Color changes
-- Brightness adjustment
-- Animation patterns
-- On/off toggle
+RGB underglow is enabled by default with 35 WS2812 LEDs. The following controls are available on the raise layer:
+
+**Available Controls:**
+- **Toggle**: `RAISE` + `RGBTOG` - Turn underglow on/off
+- **Brightness**: `RAISE` + `RGB+` / `RGB-` - Adjust brightness levels
+- **Additional controls** can be added:
+  - Color cycling with `RGB_HUI` / `RGB_HUD`
+  - Effect patterns with `RGB_EFF`
+  - Saturation adjustment with `RGB_SAI` / `RGB_SAD`
+
+**Usage:**
+1. Hold `RAISE` key
+2. Press `RGBTOG` to toggle underglow on/off
+3. Press `RGB+` or `RGB-` to adjust brightness
+4. Release `RAISE` to return to normal typing
+
+**Note:** RGB underglow may impact battery life on wireless usage.
 
 ---
 
