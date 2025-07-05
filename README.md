@@ -4,12 +4,14 @@ This repository contains a complete ZMK firmware setup for the Sofle split keybo
 
 ## 🐱 Features
 
-- **Simple Bongo Cat Display**: ASCII cat face that changes expressions based on your WPM
-  - 😴 Idle (0 WPM): `(o.o)` - Calm and relaxed
-  - 😊 Tapping (10+ WPM): `(^.^)` - Happy typing
-  - 😉 Ready (30+ WPM): `(-.o)` - Getting focused (winking)
-  - 🤩 Furious (50+ WPM): `(@.@)` - Intense typing mode!
-- **Real-time WPM Display**: Live words-per-minute tracking
+- **Animated Bongo Cat Display**: ASCII cat that cycles through different expressions every 3 seconds
+  - 😴 Calm: `(o.o)` - Peaceful and relaxed
+  - 😊 Happy: `(^.^)` - Content and cheerful
+  - 😉 Winking: `(-.o)` - Playful and mischievous
+  - 🤩 Alert: `(@.@)` - Focused and attentive
+  - 😴 Sleepy: `(>.<)` - Tired but cute
+  - ✨ Sparkly: `(*.*)` - Excited and energetic
+- **Reliable Timer-Based Animation**: No complex dependencies, just works!
 - **3-Layer Keymap**: QWERTY base, symbols/functions, and navigation/system layers
 - **RGB Underglow**: 35 WS2812 LEDs with customizable effects
 - **Rotary Encoder Support**: Volume and page navigation
