@@ -22,12 +22,25 @@
 };
 
 / {
+    macros {
+        rgb_brightness_off: rgb_brightness_off {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_BRD &rgb_ug RGB_BRD &rgb_ug RGB_BRD &rgb_ug RGB_BRD &rgb_ug RGB_BRD>;
+        };
+        rgb_brightness_on: rgb_brightness_on {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_BRI &rgb_ug RGB_BRI &rgb_ug RGB_BRI>;
+        };
+    };
+
     behaviors {
         rgb_bright_toggle: rgb_bright_toggle {
             compatible = "zmk,behavior-mod-morph";
             label = "RGB_BRIGHT_TOGGLE";
             #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_BRT 0>, <&rgb_ug RGB_BRT 40>;
+            bindings = <&rgb_brightness_off>, <&rgb_brightness_on>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
