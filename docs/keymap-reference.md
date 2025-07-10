@@ -13,36 +13,35 @@ This document provides a comprehensive reference for the Sofle keyboard keymap c
 
 ## Layer Overview
 
-The keymap consists of 3 layers:
-- **Layer 0**: Default (QWERTY base layer)
+The keymap consists of 4 layers:
+- **Layer 0**: Default (Dvorak base layer)
 - **Layer 1**: Lower (Numbers, symbols, function keys)
 - **Layer 2**: Raise (Navigation, Bluetooth, system controls)
+- **Layer 3**: Adjust (Advanced RGB controls, system settings)
 
 ---
 
-## Layer 0: Default (QWERTY)
+## Layer 0: Default (Dvorak)
 
 **Activation**: Default layer (always active)
 
-```
 ┌─────┬─────┬─────┬─────┬─────┬─────┐                    ┌─────┬─────┬─────┬─────┬─────┬─────┐
-│  `  │  1  │  2  │  3  │  4  │  5  │                    │  6  │  7  │  8  │  9  │  0  │     │
+│  `  │  1  │  2  │  3  │  4  │  5  │                    │  6  │  7  │  8  │  9  │  0  │  -  │
 ├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ESC │  Q  │  W  │  E  │  R  │  T  │                    │  Y  │  U  │  I  │  O  │  P  │BKSPC│
+│ ESC │  '  │  ,  │  .  │  P  │  Y  │                    │  F  │  G  │  C  │  R  │  L  │BKSPC│
 ├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ TAB │  A  │  S  │  D  │  F  │  G  │                    │  H  │  J  │  K  │  L  │  ;  │  '  │
+│ TAB │  A  │  O  │  E  │  U  │  I  │                    │  D  │  H  │  T  │  N  │  S  │  /  │
 ├─────┼─────┼─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-│SHIFT│  Z  │  X  │  C  │  V  │  B  │MUTE │        │     │  N  │  M  │  ,  │  .  │  /  │SHIFT│
+│SHIFT│  ;  │  Q  │  J  │  K  │  X  │MUTE │        │     │  B  │  M  │  W  │  V  │  Z  │SHIFT│
 └─────┴─────┴─────┼─────┼─────┼─────┼─────┤        ├─────┼─────┼─────┼─────┴─────┴─────┴─────┘
-                  │ GUI │ ALT │CTRL │LOWER│        │SPACE│RAISE│CTRL │ ALT │
-                  │     │     │     │     │        │     │     │     │ GUI │
+                  │ GUI │ ALT │CTRL │LOWER│        │RAISE│RCTRL│RALT │RGUI │
+                  │     │     │     │     │        │     │     │     │     │
                   └─────┴─────┴─────┼─────┤        ├─────┼─────┴─────┴─────┘
-                                    │ENTER│        │     │
+                                    │SPACE│        │ RET │
                                     └─────┘        └─────┘
-```
 
 ### Key Functions
-- **Standard QWERTY**: All letters and numbers in standard positions
+- **Dvorak Layout**: Optimized for typing efficiency with vowels on the left home row
 - **Escape**: Top left for quick access
 - **Tab**: Standard position for window/field navigation
 - **Shift**: Both sides for comfortable typing
@@ -50,6 +49,7 @@ The keymap consists of 3 layers:
 - **Layer Access**: 
   - `LOWER` (hold): Access Layer 1 (symbols/functions)
   - `RAISE` (hold): Access Layer 2 (navigation/system)
+  - `LOWER + RAISE` (hold both): Access Layer 3 (adjust/advanced)
 - **Encoders**:
   - Left: Volume Up/Down
   - Right: Page Up/Down
@@ -60,7 +60,6 @@ The keymap consists of 3 layers:
 
 **Activation**: Hold `LOWER` key (bottom left thumb key)
 
-```
 ┌─────┬─────┬─────┬─────┬─────┬─────┐                    ┌─────┬─────┬─────┬─────┬─────┬─────┐
 │     │ F1  │ F2  │ F3  │ F4  │ F5  │                    │ F6  │ F7  │ F8  │ F9  │ F10 │ F11 │
 ├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
@@ -75,7 +74,6 @@ The keymap consists of 3 layers:
                   └─────┴─────┴─────┼─────┤        ├─────┼─────┴─────┴─────┘
                                     │     │        │     │
                                     └─────┘        └─────┘
-```
 
 ### Key Functions
 - **Function Keys**: F1-F12 across top row
@@ -94,9 +92,8 @@ The keymap consists of 3 layers:
 
 **Activation**: Hold `RAISE` key (bottom right thumb key)
 
-```
 ┌─────┬─────┬─────┬─────┬─────┬─────┐                    ┌─────┬─────┬─────┬─────┬─────┬─────┐
-│BTCLR│ BT1 │ BT2 │ BT3 │ BT4 │ BT5 │                    │RGBTOG│RGB+ │RGB- │     │     │     │
+│BTCLR│ BT1 │ BT2 │ BT3 │ BT4 │ BT5 │                    │RGB↕ │RGB+ │RGB- │     │     │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
 │     │ INS │PSCR │MENU │     │     │                    │PGUP │     │  ↑  │     │  0  │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
@@ -104,19 +101,18 @@ The keymap consists of 3 layers:
 ├─────┼─────┼─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┤
 │     │UNDO │ CUT │COPY │PASTE│     │     │        │     │     │     │     │     │     │     │
 └─────┴─────┴─────┼─────┼─────┼─────┼─────┤        ├─────┼─────┼─────┼─────┴─────┴─────┴─────┘
-                  │     │     │     │     │        │     │▓▓▓▓▓│     │     │
-                  │     │     │     │     │        │     │▓▓▓▓▓│     │     │
+                  │     │     │     │     │        │▓▓▓▓▓│     │     │     │
+                  │     │     │     │     │        │▓▓▓▓▓│     │     │     │
                   └─────┴─────┴─────┼─────┤        ├─────┼─────┴─────┴─────┘
                                     │     │        │     │
                                     └─────┘        └─────┘
-```
 
 ### Key Functions
 - **Bluetooth Controls** (Top Row Left):
   - `BTCLR`: Clear all Bluetooth pairings
   - `BT1-BT5`: Switch to Bluetooth device 1-5
-- **RGB Underglow Controls** (Top Row Right):
-  - `RGBTOG`: Toggle RGB underglow on/off
+- **RGB Basic Controls** (Top Row Right):
+  - `RGB↕`: Toggle RGB brightness (custom macro)
   - `RGB+`: Increase brightness
   - `RGB-`: Decrease brightness
 - **System Functions**:
@@ -136,6 +132,48 @@ The keymap consists of 3 layers:
 
 ---
 
+## Layer 3: Adjust (Advanced RGB & System)
+
+**Activation**: Hold `LOWER + RAISE` keys simultaneously (conditional layer)
+
+┌─────┬─────┬─────┬─────┬─────┬─────┐                    ┌─────┬─────┬─────┬─────┬─────┬─────┐
+│BTCLR│ BT1 │ BT2 │ BT3 │ BT4 │ BT5 │                    │     │     │     │     │     │     │
+├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
+│EXTPW│RGB_H│RGB_H│RGB_S│RGB_S│RGB_E│                    │     │     │     │     │     │     │
+│ TOG │ DWN │ UP  │ DWN │ UP  │ FF  │                    │     │     │     │     │     │     │
+├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
+│     │RGB_B│RGB_B│     │     │     │                    │     │     │     │     │     │     │
+│     │ DWN │ UP  │     │     │     │                    │     │     │     │     │     │     │
+├─────┼─────┼─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+│     │     │     │     │     │     │RGB_T│        │     │     │     │     │     │     │     │
+│     │     │     │     │     │     │ OG  │        │     │     │     │     │     │     │     │
+└─────┴─────┴─────┼─────┼─────┼─────┼─────┤        ├─────┼─────┼─────┼─────┴─────┴─────┴─────┘
+                  │▓▓▓▓▓│▓▓▓▓▓│▓▓▓▓▓│▓▓▓▓▓│        │▓▓▓▓▓│▓▓▓▓▓│▓▓▓▓▓│▓▓▓▓▓│
+                  │▓▓▓▓▓│▓▓▓▓▓│▓▓▓▓▓│▓▓▓▓▓│        │▓▓▓▓▓│▓▓▓▓▓│▓▓▓▓▓│▓▓▓▓▓│
+                  └─────┴─────┴─────┼─────┤        ├─────┼─────┴─────┴─────┘
+                                    │▓▓▓▓▓│        │▓▓▓▓▓│
+                                    └─────┘        └─────┘
+
+### Key Functions
+- **Bluetooth Controls** (Top Row):
+  - `BTCLR`: Clear all Bluetooth pairings
+  - `BT1-BT5`: Switch to Bluetooth device 1-5
+- **Advanced RGB Controls**:
+  - `EXTPW TOG`: Toggle external power for RGB
+  - `RGB_H DWN/UP`: Decrease/Increase RGB hue (color)
+  - `RGB_S DWN/UP`: Decrease/Increase RGB saturation (intensity)
+  - `RGB_EFF`: Cycle through RGB effects/patterns
+  - `RGB_B DWN/UP`: Decrease/Increase RGB brightness
+  - `RGB_TOG`: Toggle RGB underglow on/off
+- **Layer Activation**: Both `LOWER` and `RAISE` keys are highlighted (▓▓▓▓▓) as this layer requires both to be held
+
+### Usage Examples
+- **Change RGB Color**: Hold `LOWER + RAISE`, then use `RGB_H UP/DWN` for hue and `RGB_S UP/DWN` for saturation
+- **Switch Bluetooth Device**: Hold `LOWER + RAISE`, then press `BT1-BT5` to switch profiles
+- **Reset Bluetooth**: Hold `LOWER + RAISE`, then press `BTCLR` to clear all pairings
+
+---
+
 ## Encoder Functions
 
 ### Left Encoder (Master Side)
@@ -150,56 +188,42 @@ The keymap consists of 3 layers:
 
 ## Display Features
 
-The Sofle keyboard supports OLED displays with an animated bongo cat that responds to your typing speed! The display shows:
-
-- **Animated Bongo Cat**: ASCII art cat that changes based on your WPM
-  - **Idle** (0 WPM): Calm sitting cat
-  - **Tapping** (10+ WPM): Cat starts moving
-  - **Ready** (30+ WPM): Cat prepares for intense typing
-  - **Furious** (50+ WPM): Cat goes crazy with rapid animation!
-- **WPM Tracking**: Real-time words per minute display
-- **Layer Information**: Current active layer indicator  
-- **Battery Status**: Battery level percentage
-- **Typing State**: Current activity level indicator
+The Sofle keyboard uses the standard nice!nano display system for reliable operation and maximum compatibility.
 
 ### OLED Display Configuration
 
-The bongo cat display is configured in `sofle.conf`:
+The display is configured in `sofle.conf`:
 
 ```
 CONFIG_ZMK_DISPLAY=y
-CONFIG_ZMK_WPM=y
-CONFIG_ZMK_DISPLAY_STATUS_SCREEN_CUSTOM=y
-CONFIG_ZMK_DISPLAY_STATUS_SCREEN_BUILT_IN=n
+CONFIG_ZMK_DISPLAY_STATUS_SCREEN_BUILT_IN=y
 ```
 
 This enables:
 - OLED display support
-- WPM (Words Per Minute) tracking for the bongo cat animation
-- Custom status screen with bongo cat instead of the built-in display
+- Built-in ZMK display system (reliable and stable)
+- Standard status information display
 
 ### Display Layout
 
-The 128x32 OLED displays show:
-```
-┌──────────────────────────────────────┐
-│ /\_/\     WPM: 42                    │
-│( ^.^ )    Tapping                    │
-│ \ ˇ /                                │
-│   !                                  │
-│ L:0  B:85%                           │
-└──────────────────────────────────────┘
-```
+The 128x32 OLED displays show standard ZMK information:
+- **Current Layer**: Active layer indicator
+- **Battery Status**: Battery level percentage
+- **Bluetooth Status**: Connection state and active profile
+- **Caps Lock Status**: Caps lock indicator when active
+- **System Status**: Various system state indicators
 
-**Left Side**: Animated bongo cat (changes based on typing speed)  
-**Right Side**: WPM counter and current state  
-**Bottom**: Layer number and battery percentage
+**Benefits of Built-in Display System:**
+- **Reliability**: Stable operation without custom code complications
+- **Compatibility**: Works with all ZMK features and updates
+- **Low Maintenance**: No custom display code to maintain
+- **Battery Efficient**: Optimized power consumption
 
 ---
 
 ## Bluetooth Pairing
 
-1. **Clear existing pairings**: Hold `RAISE` + `BTCLR`
+1. **Clear existing pairings**: Hold `LOWER + RAISE` + `BTCLR` (or just `RAISE` + `BTCLR`)
 2. **Pair new device**: Hold `RAISE` + `BT1` (or BT2-BT5 for additional devices)
 3. **Switch devices**: Hold `RAISE` + `BT1-BT5` to switch between paired devices
 
@@ -214,23 +238,42 @@ The 128x32 OLED displays show:
 
 ## RGB Underglow
 
-RGB underglow is enabled by default with 35 WS2812 LEDs. The following controls are available on the raise layer:
+RGB underglow is enabled by default with 35 WS2812 LEDs. Controls are available on both the raise and adjust layers:
 
-**Available Controls:**
-- **Toggle**: `RAISE` + `RGBTOG` - Turn underglow on/off
+### Basic RGB Controls (Raise Layer)
+- **Toggle Brightness**: `RAISE` + `RGB↕` - Custom brightness toggle macro
 - **Brightness**: `RAISE` + `RGB+` / `RGB-` - Adjust brightness levels
-- **Additional controls** can be added:
-  - Color cycling with `RGB_HUI` / `RGB_HUD`
-  - Effect patterns with `RGB_EFF`
-  - Saturation adjustment with `RGB_SAI` / `RGB_SAD`
+
+### Advanced RGB Controls (Adjust Layer)
+- **Full Control**: `LOWER + RAISE` + various RGB keys for complete customization
+- **Hue Control**: Adjust color with `RGB_H UP/DWN`
+- **Saturation Control**: Adjust color intensity with `RGB_S UP/DWN`
+- **Effect Patterns**: Cycle through effects with `RGB_EFF`
+- **Power Management**: Toggle external power with `EXTPW TOG`
 
 **Usage:**
-1. Hold `RAISE` key
-2. Press `RGBTOG` to toggle underglow on/off
-3. Press `RGB+` or `RGB-` to adjust brightness
-4. Release `RAISE` to return to normal typing
+1. **Basic**: Hold `RAISE` key and press RGB controls for quick adjustments
+2. **Advanced**: Hold `LOWER + RAISE` together for full RGB customization
+3. **Power Saving**: Use `EXTPW TOG` in adjust layer to manage power consumption
 
 **Note:** RGB underglow may impact battery life on wireless usage.
+
+---
+
+## Dvorak Layout Benefits
+
+The Dvorak keyboard layout offers several advantages over QWERTY:
+
+### Typing Efficiency
+- **Vowels on Left Home Row**: A, O, E, U, I are easily accessible
+- **Common Consonants on Right Home Row**: D, H, T, N, S for frequent combinations
+- **Reduced Finger Movement**: More efficient finger travel patterns
+- **Better Hand Alternation**: Improved rhythm and reduced strain
+
+### Key Positions
+- **Frequent Letters**: Most common letters are on the home row
+- **Punctuation**: Comma and period are easily accessible
+- **Numbers**: Standard number row layout maintained for familiarity
 
 ---
 
@@ -238,8 +281,9 @@ RGB underglow is enabled by default with 35 WS2812 LEDs. The following controls 
 
 - **Layer modifications**: Each layer is clearly separated in the keymap file
 - **Key remapping**: Individual keys can be easily modified
-- **Additional layers**: New layers can be added (Layer 3, 4, etc.)
+- **Additional layers**: New layers can be added (Layer 4, 5, etc.)
 - **Combos**: Key combinations can be added for special functions
 - **Tap-dance**: Single key can perform multiple functions based on tap count
+- **Conditional Layers**: The adjust layer demonstrates automatic layer activation
 
 For customization instructions, see `customization-guide.md`.
