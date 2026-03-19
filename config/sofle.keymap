@@ -84,7 +84,7 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans    &trans    &trans     &kp DELETE  &kp BACKSPACE
+&trans             &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans    &trans    &trans     &kp DELETE  &kp BACKSPACE
 &kp GRAVE          &kp INS       &kp PSCRN     &kp K_CMENU   &trans        &trans                          &kp PG_UP  &trans    &kp UP    &trans     &kp N0      &trans
 &kp C_VOLUME_UP    &kp LALT      &kp LCTRL     &kp LSHFT     &trans        &kp CLCK                        &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL     &kp BSPC
 &kp C_VOLUME_DOWN  &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &trans        &trans    &trans  &trans     &trans    &trans    &trans     &trans      &trans
@@ -106,7 +106,7 @@
             bindings = <
 &bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3   &bt BT_SEL 4                               &none  &none          &none  &none  &none  &none
 &ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &kp LG(LA(R))  &rgb_ug RGB_EFF                            &none  &none          &none  &none  &none  &none
-&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none          &none                                      &none  &none          &none  &none  &none  &none
+&studio_unlock     &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none          &none                                      &none  &none          &none  &none  &none  &none
 &none              &none            &none            &none            &none          &none            &rgb_ug RGB_TOG    &none  &none  &kp LG(LA(M))  &none  &none  &none  &none
                                     &none            &none            &none          &none            &none              &none  &none  &none          &none  &none
             >;
